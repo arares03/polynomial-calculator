@@ -1,0 +1,52 @@
+@startuml
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+interface AppListener << interface >> {
+  + processData(String, String, String): String
+}
+class Controller {
+  + processData(String, String, String): String
+  + main(String[]): void
+}
+class Main {
+  + main(String[]): void
+}
+class Operations {
+  + integration(Polynomial): Polynomial
+  + subtract(Polynomial, Polynomial): Polynomial
+  + multiply(Polynomial, Polynomial): Polynomial
+  + add(Polynomial, Polynomial): Polynomial
+  + divide(Polynomial, Polynomial): Polynomial
+  + differentiation(Polynomial): Polynomial
+}
+class Polynomial {
+  - terms: HashMap<Integer, Double>
+  + getTerms(): HashMap<Integer, Double>
+  + getHighestPower(): int
+  + parseString(String): void
+  + polynomialToString(): String
+  + showTerms(): void
+}
+class Tests {
+  + differentiationTest(): void
+  + subtractTest(): void
+  + addTest(): void
+  + divideTest(): void
+  + multiplyTest(): void
+  + integrationTest(): void
+}
+class View {
+ + prepareGUI(): void
+ + getFirstNumber(): void
+ + getSecondNumber(): void
+}
+
+Controller   -[#008200,dashed]-.  AppListener
+Operations    -[#131313,dashed]-^ Polynomial
+Operations    -[#131313,dashed]-^ Controller
+Controller -[#131313,dashed]-^ View
+View -[#131313,dashed]-^ Main
+
+@enduml
