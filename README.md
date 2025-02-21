@@ -12,6 +12,8 @@ This project is a **Polynomial Calculator** with a **Graphical User Interface (G
 
 The GUI is built using **Java Swing**, and the backend follows the **Model-View-Controller (MVC)** pattern.
 
+![polynomial](https://github.com/user-attachments/assets/0acec2b9-f001-42cf-b917-12e0bca11fb5)
+
 ---
 
 ## Features
